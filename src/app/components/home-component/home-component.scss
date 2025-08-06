@@ -1,0 +1,55 @@
+.home {
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px;
+  text-align: center;
+
+  .intro {
+    max-width: 800px;
+
+    .highlight {
+      color: #a78bfa;
+    }
+
+    .profile img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      margin: 20px 0;
+      box-shadow: 0 0 30px #a78bfa;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 500;
+      margin: 20px 0;
+    }
+
+    .negrito {
+      border: 1px dashed #a78bfa;
+      padding: 2px 8px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .desc {
+      font-size: 10px;
+      color: #ccc;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .facebook {
+      margin-top: 10px;
+    }
+
+    .bio {
+      margin-top: 20px;
+      color: #ccc;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.featured {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 60px 40px;
+
+  .text {
+    max-width: 400px;
+
+    .small-title {
+      font-size: 12px;
+      color: #a78bfa;
+    }
+
+    h3 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .description {
+      color: #ccc;
+      margin-top: 20px;
+    }
+  }
+
+  .preview img {
+    width: 400px;
+    border-radius: 20px;
+    margin-top: 20px;
+  }
+}
