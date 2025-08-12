@@ -6,7 +6,13 @@
   background-color: #120f2a;
 
   .logo {
-    font-size: 24px;
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 40px; 
+      width: auto; 
+    }
   }
 
   ul {
@@ -17,6 +23,14 @@
     li a {
       color: white;
       font-weight: 500;
+    }
+  }
+
+  .perfil {
+    img {
+      height: 40px;
+      width: auto;
+      border-radius: 50%;
     }
   }
 }
