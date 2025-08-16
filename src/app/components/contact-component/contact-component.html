@@ -1,0 +1,19 @@
+<section class="contact-section" id="contato">
+  <h2>Entre em Contato</h2>
+  
+  <form class="contact-form" (ngSubmit)="enviarFormulario()" #form="ngForm">
+    <input type="text" placeholder="Seu Nome" [(ngModel)]="nome" name="nome" required />
+    <input type="email" placeholder="Seu E-mail" [(ngModel)]="email" name="email" required />
+    <textarea placeholder="Digite sua mensagem" [(ngModel)]="mensagem" name="mensagem" required></textarea>
+    <button type="submit">Enviar Mensagem</button>
+  </form>
+
+  <div class="social-icons">
+    <a href="https://github.com/SEU_USUARIO" target="_blank">
+      <img src="assets/icons/github.svg" alt="GitHub" />
+    </a>
+    <a href="https://linkedin.com/in/SEU_USUARIO" target="_blank">
+      <img src="assets/icons/linkedin.svg" alt="LinkedIn" />
+    </a>
+  </div>
+</section>
