@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact-component',
@@ -10,36 +10,23 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
   styleUrl: './contact-component.scss'
 })
 export class ContactComponent {
-nome = '';
+  nome = '';
   email = '';
-  mensagem = '';
+  descricao = '';
 
-  enviarFormulario() {
-    if (!this.nome || !this.email || !this.mensagem) {
-      alert('Por favor, preencha todos os campos!');
-      return;
-    }
+  constructor(private http: HttpClient) {}
 
-    const templateParams = {
-      from_name: this.nome,
-      from_email: this.email,
-      message: this.mensagem
+  enviarEmail() {
+    const payload = {
+      nome: this.nome,
+      email: this.email,
+      mensagem: this.descricao
     };
 
-    emailjs.send(
-      'service_c6zzpfc', 
-      'template_11g7jpf',
-      templateParams,
-      '_id8Q8_pmp_bLD62O'  
-    )
-    .then((result: EmailJSResponseStatus) => {
-      alert('Mensagem enviada com sucesso!');
-      this.nome = '';
-      this.email = '';
-      this.mensagem = '';
-    }, (error) => {
-      console.error(error.text);
-      alert('Ocorreu um erro ao enviar a mensagem.');
-    });
+    this.http.post('http://localhost:8080/api/email/send', payload, { responseType: 'text' })
+      .subscribe({
+        next: (res) => alert(res),
+        error: (err) => alert('Erro ao enviar: ' + err.message)
+      });
   }
 }
