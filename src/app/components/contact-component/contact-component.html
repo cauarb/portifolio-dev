@@ -4,7 +4,7 @@
   <form class="contact-form" (ngSubmit)="enviarEmail()" #form="ngForm">
     <input type="text" placeholder="Seu Nome" [(ngModel)]="nome" name="nome" required />
     <input type="email" placeholder="Seu E-mail" [(ngModel)]="email" name="email" required />
-    <textarea placeholder="Digite sua mensagem" [(ngModel)]="descricao" name="descricao" required></textarea>
+    <textarea type="descricao" placeholder="Digite sua mensagem" [(ngModel)]="descricao" name="descricao" required></textarea>
     <button type="submit">Enviar Mensagem</button>
   </form>
 

@@ -20,7 +20,7 @@ export class ContactComponent {
     const payload = {
       nome: this.nome,
       email: this.email,
-      mensagem: this.descricao
+      descricao: this.descricao
     };
 
     this.http.post('http://localhost:8080/api/email/send', payload, { responseType: 'text' })
