@@ -10,4 +10,11 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent {
 
+  irParaProjetos() {
+    const projetosSection = document.getElementById('projetos');
+    if (projetosSection) {
+      projetosSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
 }
